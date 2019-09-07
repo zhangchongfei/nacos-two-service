@@ -1,0 +1,19 @@
+spring.application.name: @project.artifactId@
+#SpringCloud配置
+eureka.instance.instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+spring.cloud.config.fail-fast: ${SPRING_CLOUD_CONFIG_FAIL-FAST:true}
+spring.cloud.config.retry.max-attempts: ${SPRING_CLOUD_CONFIG_RETRY_MAX-ATTEMPTS:60}
+spring.cloud.config.retry.max-interval: ${SPRING_CLOUD_CONFIG_RETRY_MAX-INTERVAL:10000}
+spring.cloud.config.retry.initial-interval: ${SPRING_CLOUD_CONFIG_RETRY_INITIAL-INTERVAL:1000}
+spring.cloud.config.label: ${SPRING_CLOUD_CONFIG_LABEL:master}
+spring.cloud.config.profile: ${SPRING_CLOUD_CONFIG_PROFILE:local}
+spring.cloud.config.uri: ${SPRING_CLOUD_CONFIG_URI:http://localhost:8083}
+#nacos配置
+spring.cloud.nacos.discovery.server-addr: ${SPRING_CLOUD_NACOS_DISCOVERY_URI:192.168.2.230:8848}
+spring.cloud.nacos.config.server-addr: ${SPRING_CLOUD_NACOS_CONFIG_URI:192.168.2.230:8848}
+spring.cloud.nacos.config.file-extension: yml
+spring.cloud.nacos.config.shared-dataids: application.yml,application-${NACOS_ENVIRONMENT_NAME:local}.yml
+spring.cloud.nacos.config.refreshable-dataids: application.yml
+spring.cloud.nacos.config.namespace: ${SPRING_CLOUD_NACOS_CONFIG_NAMESPACE:c806974e-2c61-43b9-9f64-ff6c0a1e863d}
+spring.cloud.nacos.discovery.namespace: ${SPRING_CLOUD__NACOS_DISCOVERY_NAMESPACE:c806974e-2c61-43b9-9f64-ff6c0a1e863d}
+spring.main.allow-bean-definition-overriding: true
